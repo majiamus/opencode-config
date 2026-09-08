@@ -5,7 +5,7 @@
 **还没有装opencode**
 
 ```sh
-git clone https://github.com/yandy/agent-config.git ~/.config/opencode
+git clone https://github.com/majiamus/opencode-config.git ~/.config/opencode
 npm install -g opencode-ai
 ```
 
@@ -16,7 +16,7 @@ cd ~/.config/opencode
 
 git init
 git branch -M main
-git remote add origin https://github.com/yandy/agent-config.git
+git remote add origin https://github.com/majiamus/opencode-config.git
 git fetch -p origin
 git reset --hard origin/main
 ```
@@ -100,3 +100,13 @@ playwright install chromium firefox
 npx ctx7 login
 # npx ctx7 setup --opencode
 ```
+
+- find-docs（Context7 文档检索 skill，基于 `ctx7` CLI）
+
+```sh
+npm install -g ctx7@latest
+```
+
+- find-skills（发现 / 安装其他 skill 的元技能）
+
+- multimodal-looker（本地自定义，多模态识图；同时对应 `agents/multimodal-looker.md` 子代理）
