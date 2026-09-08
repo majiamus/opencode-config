@@ -1,0 +1,196 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "lsp": {},
+  "model": "deepseek/deepseek-v4.1-flash-expires-on-0910",
+  "small_model": "deepseek/deepseek-v4.1-flash-expires-on-0910",
+  "agent": {
+    "explore": {
+      "model": "deepseek/deepseek-v4.1-flash-expires-on-0910",
+      "variant": "max"
+    },
+    "general-small": {
+      "model": "deepseek/deepseek-v4.1-flash-expires-on-0910",
+      "variant": "max"
+    },
+    "general-standard": {
+      "model": "deepseek/deepseek-v4.1-flash-expires-on-0910",
+      "variant": "max"
+    },
+    "general-max": {
+      "model": "deepseek/deepseek-v4.1-flash-expires-on-0910",
+      "variant": "max"
+    },
+    "multimodal-looker": {
+      "model": "xiaomi/mimo-v2.5"
+    }
+  },
+  "plugin": [
+    "superpowers@git+https://github.com/obra/superpowers.git"
+  ],
+  "mcp": {
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "enabled": true,
+      "headers": {
+        "CONTEXT7_API_KEY": "ctx7sk-a93443b6-ddec-4f2a-a99d-401dfe5f2672"
+      }
+    }
+  },
+  "provider": {
+    "opencode": { "disabled": true },
+    "deepseek": {
+      "models": {
+        "deepseek-v4.1-flash-expires-on-0910": {
+          "name": "DeepSeek V4.1 Flash (0910)",
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "limit": {
+            "context": 128000,
+            "output": 65536
+          }
+        }
+      }
+    },
+    "alibaba-cn": {
+      "npm": "@ai-sdk/anthropic",
+      "options": {
+        "baseURL": "https://dashscope.aliyuncs.com/apps/anthropic/v1"
+      },
+      "models": {
+        "qwen3.8-max": {
+          "name": "Qwen3.8 Max",
+          "modalities": {
+            "input": ["text"],
+            "output": ["text"]
+          },
+          "options": {
+            "thinking": {
+              "type": "enabled"
+            }
+          },
+          "limit": {
+            "context": 1048576,
+            "input": 1006592,
+            "output": 65536
+          },
+          "cost": {
+            "input": 12,
+            "output": 36,
+            "cache_read": 2.4,
+            "cache_write": 12
+          }
+        }
+      }
+    },
+    "xiaomi": {
+      "npm": "@ai-sdk/anthropic",
+      "options": {
+        "baseURL": "https://api.xiaomimimo.com/anthropic/v1"
+      },
+      "models": {
+        "mimo-v2.5-pro": {
+          "name": "MiMo V2.5 Pro",
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "options": {
+            "thinking": {
+              "type": "enabled"
+            }
+          },
+          "limit": {
+            "context": 1000000,
+            "output": 65536
+          }
+        },
+        "mimo-v2.5": {
+          "name": "MiMo V2.5",
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "options": {
+            "thinking": {
+              "type": "enabled"
+            }
+          },
+          "limit": {
+            "context": 1000000,
+            "output": 65536
+          }
+        }
+      }
+    },
+    "tencent-tokenhub": {
+      "npm": "@ai-sdk/anthropic",
+      "options": {
+        "baseURL": "https://tokenhub.tencentmaas.com/v1"
+      },
+      "models": {
+        "glm-5.3": {
+          "name": "GLM-5.3",
+          "modalities": {
+            "input": ["text"],
+            "output": ["text"]
+          },
+          "options": {
+            "thinking": {
+              "type": "enabled"
+            },
+            "reasoningEffort": "high"
+          },
+          "variants": {
+            "high": {
+              "thinking": {
+                "type": "enabled"
+              },
+              "reasoningEffort": "high"
+            },
+            "max": {
+              "thinking": {
+                "type": "enabled"
+              },
+              "reasoningEffort": "max"
+            }
+          },
+          "limit": {
+            "context": 1048576,
+            "input": 1048576,
+            "output": 131072
+          },
+          "cost": {
+            "input": 8,
+            "output": 28,
+            "cache_read": 2,
+            "cache_write": 0
+          }
+        },
+        "kimi-k3": {
+		  "name": "kimi-k3",
+		  "modalities": {
+			"input": ["text", "image"],
+			"output": ["text"]
+		  },
+		  "options": {
+			"reasoning_effort": "max"
+		  },
+		  "limit": {
+			"context": 1048576,
+			"input": 1048576,
+			"output": 131072
+		  },
+		  "cost": {
+			"input": 20,
+			"output": 100,
+			"cache_read": 2,
+			"cache_write": 0
+		  }
+		}
+      }
+    }
+  }
+}
