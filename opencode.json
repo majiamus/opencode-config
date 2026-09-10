@@ -1,23 +1,23 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "lsp": {},
-  "model": "deepseek/deepseek-v4.1-flash-expires-on-0910",
-  "small_model": "deepseek/deepseek-v4.1-flash-expires-on-0910",
+  "model": "deepseek/deepseek-flash",
+  "small_model": "deepseek/deepseek-flash",
   "agent": {
     "explore": {
-      "model": "deepseek/deepseek-v4.1-flash-expires-on-0910",
+      "model": "deepseek/deepseek-flash",
       "variant": "max"
     },
     "general-small": {
-      "model": "deepseek/deepseek-v4.1-flash-expires-on-0910",
+      "model": "deepseek/deepseek-flash",
       "variant": "max"
     },
     "general-standard": {
-      "model": "deepseek/deepseek-v4.1-flash-expires-on-0910",
+      "model": "deepseek/deepseek-flash",
       "variant": "max"
     },
     "general-max": {
-      "model": "deepseek/deepseek-v4.1-flash-expires-on-0910",
+      "model": "deepseek/deepseek-flash",
       "variant": "max"
     },
     "multimodal-looker": {
@@ -41,15 +41,15 @@
     "opencode": { "disabled": true },
     "deepseek": {
       "models": {
-        "deepseek-v4.1-flash-expires-on-0910": {
-          "name": "DeepSeek V4.1 Flash (0910)",
+        "deepseek-flash": {
+          "name": "DeepSeek V4.1 Flash",
           "modalities": {
             "input": ["text", "image"],
             "output": ["text"]
           },
           "limit": {
-            "context": 128000,
-            "output": 65536
+            "context": 1000000,
+            "output": 384000
           }
         }
       }

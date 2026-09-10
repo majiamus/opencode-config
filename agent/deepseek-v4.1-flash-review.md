@@ -1,7 +1,7 @@
 ---
 description: 使用 DeepSeek V4.1 Flash 模型审阅技术方案文档（只读审阅专家）
 mode: subagent
-model: deepseek/deepseek-v4.1-flash-expires-on-0910
+model: deepseek/deepseek-flash
 permission:
   edit: deny
   bash: deny
