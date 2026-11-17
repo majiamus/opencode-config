@@ -39,6 +39,46 @@
   },
   "provider": {
     "opencode": { "disabled": true },
+    "ark": {
+      "npm": "@ai-sdk/anthropic",
+      "options": {
+        "baseURL": "https://ark.cn-beijing.volces.com/api/compatible/v1"
+      },
+      "models": {
+        "deepseek-v4-1-flash-261017": {
+          "name": "DeepSeek v4.1 Flash",
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "reasoning": true,
+          "options": {
+            "thinking": {
+              "type": "enabled"
+            },
+            "reasoningEffort": "max"
+          },
+          "variants": {
+            "max": {
+              "thinking": {
+                "type": "enabled"
+              },
+              "reasoningEffort": "max"
+            }
+          },
+          "limit": {
+            "context": 1000000,
+            "output": 384000
+          },
+          "cost": {
+            "input": 1,
+            "output": 4,
+            "cache_read": 0.02,
+            "cache_write": 0
+          }
+        }
+      }
+    },
     "deepseek": {
       "models": {
         "deepseek-flash": {
@@ -85,42 +125,35 @@
         }
       }
     },
-    "xiaomi": {
-      "npm": "@ai-sdk/anthropic",
+    "alibaba-token-plan": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Aliyun Token Plan",
       "options": {
-        "baseURL": "https://api.xiaomimimo.com/anthropic/v1"
+        "baseURL": "https://token-plan.maas.qianwenaiapi.com/compatible-mode/v1"
       },
       "models": {
-        "mimo-v2.5-pro": {
-          "name": "MiMo V2.5 Pro",
+        "qwen3.8-max": {
+          "name": "Qwen3.8 Max",
           "modalities": {
-            "input": ["text", "image"],
+            "input": ["text"],
             "output": ["text"]
           },
-          "options": {
-            "thinking": {
-              "type": "enabled"
-            }
-          },
           "limit": {
-            "context": 1000000,
+            "context": 1048576,
+            "input": 1006592,
             "output": 65536
           }
         },
-        "mimo-v2.5": {
-          "name": "MiMo V2.5",
+        "glm-5.3": {
+          "name": "GLM-5.3",
           "modalities": {
-            "input": ["text", "image"],
+            "input": ["text"],
             "output": ["text"]
           },
-          "options": {
-            "thinking": {
-              "type": "enabled"
-            }
-          },
           "limit": {
-            "context": 1000000,
-            "output": 65536
+            "context": 1048576,
+            "input": 1048576,
+            "output": 131072
           }
         }
       }
